@@ -7,7 +7,8 @@
 
 using namespace std;
 
-class Doctor : public Person {
+class Doctor : public Person
+{
 private:
     string specialization;
 
@@ -23,4 +24,5 @@ public:
 
     static Doctor deserialize(const string &line);
 };
+
 #endif
