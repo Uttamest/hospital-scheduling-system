@@ -3,15 +3,12 @@
 
 #include <iosfwd>
 #include <string>
-
 using namespace std;
 
-// Abstract base class used by Doctor and Patient.
 class Person {
 private:
     int id;
-    string name;
-    string phone;
+    string name, phone;
 
 public:
     Person(int id, const string &name, const string &phone);
