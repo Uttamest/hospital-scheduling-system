@@ -1,11 +1,9 @@
 #include "Doctor.h"
-
 #include "HospitalException.h"
 #include "TextUtils.h"
 
 #include <ostream>
 #include <sstream>
-
 using namespace std;
 
 Doctor::Doctor(int id, const string &name, const string &phone, const string &specialization) : Person(id, name, phone)
