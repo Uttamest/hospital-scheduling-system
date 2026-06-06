@@ -11,31 +11,26 @@ Doctor::Doctor(int id, const string &name, const string &phone, const string &sp
     setSpecialization(specialization);
 }
 
-const string &Doctor::getSpecialization() const
-{
+const string &Doctor::getSpecialization() const {
     return specialization;
 }
 
-void Doctor::setSpecialization(const string &newSpecialization)
-{
+void Doctor::setSpecialization(const string &newSpecialization) {
     text::requireField(newSpecialization, "Specialization");
     specialization = text::trim(newSpecialization);
 }
 
-string Doctor::role() const
-{
+string Doctor::role() const {
     return "Doctor";
 }
 
-void Doctor::printSummary(ostream &out) const
-{
+void Doctor::printSummary(ostream &out) const {
     out << "[" << role() << " #" << getId() << "] "
         << getName() << " | " << getSpecialization()
         << " | Phone: " << getPhone() << '\n';
 }
 
-string Doctor::serialize() const
-{
+string Doctor::serialize() const {
     ostringstream out;
     out << getId() << '|'
         << getName() << '|'
@@ -44,13 +39,10 @@ string Doctor::serialize() const
     return out.str();
 }
 
-Doctor Doctor::deserialize(const string &line)
-{
+Doctor Doctor::deserialize(const string &line) {
     const vector<string> parts = text::split(line, '|');
-    if (parts.size() != 4)
-    {
+    if (parts.size() != 4) {
         throw ValidationException("Doctor record must have 4 fields.");
     }
-
     return Doctor(text::toInt(parts[0], "Doctor id"), parts[1], parts[2], parts[3]);
 }
