@@ -8,8 +8,7 @@
 
 using namespace std;
 
-Doctor::Doctor(int id, const string &name, const string &phone, const string &specialization)
-    : Person(id, name, phone)
+Doctor::Doctor(int id, const string &name, const string &phone, const string &specialization) : Person(id, name, phone)
 {
     setSpecialization(specialization);
 }
