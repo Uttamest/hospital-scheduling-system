@@ -2,13 +2,11 @@
 #define PATIENT_H
 
 #include "Person.h"
-
 #include <string>
-
 using namespace std;
 
 class Patient : public Person {
-private:
+  private:
     int age;
     string medicalNote;
 
