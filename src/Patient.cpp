@@ -55,14 +55,11 @@ string Patient::serialize() const {
 
 Patient Patient::deserialize(const string &line) {
     const vector<string> parts = text::split(line, '|');
-    if (parts.size() != 5)
-    {
+    if (parts.size() != 5) {
         throw ValidationException("Patient record must have 5 fields.");
     }
-
     return Patient(text::toInt(parts[0], "Patient id"),
-                   parts[1],
-                   parts[2],
-                   text::toInt(parts[3], "Age"),
-                   parts[4]);
+     parts[1], parts[2],
+     text::toInt(parts[3], "Age"),
+     parts[4]);
 }
