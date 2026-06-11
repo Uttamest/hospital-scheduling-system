@@ -1,18 +1,17 @@
 #ifndef PERSON_H
 #define PERSON_H
-
 #include <iosfwd>
 #include <string>
 using namespace std;
 
-class Person {
+class Person {  // Used by both Doctor and Patients..
 private:
     int id;
     string name, phone;
 
 public:
     Person(int id, const string &name, const string &phone);
-    virtual ~Person() {}
+    virtual ~Person() {}      // Destructor
 
     int getId() const;
     const string &getName() const;
