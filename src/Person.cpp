@@ -14,12 +14,10 @@ Person::Person(int id, const string &name, const string &phone) : id(id) {
 int Person::getId() const {
     return id;
 }
-
-const string &Person::getName() const {
+const string& Person::getName() const {
     return name;
 }
-
-const string &Person::getPhone() const {
+const string& Person::getPhone() const {
     return phone;
 }
 
