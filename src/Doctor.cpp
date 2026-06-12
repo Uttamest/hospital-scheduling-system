@@ -6,8 +6,8 @@
 #include <sstream>
 using namespace std;
 
-Doctor::Doctor(int id, const string &name, const string &phone, const string &specialization) : Person(id, name, phone)
-{
+Doctor::Doctor(int id, const string &name, const string &phone, const string &specialization)
+    : Person(id, name, phone) {
     setSpecialization(specialization);
 }
 
@@ -25,17 +25,12 @@ string Doctor::role() const {
 }
 
 void Doctor::printSummary(ostream &out) const {
-    out << "[" << role() << " #" << getId() << "] "
-        << getName() << " | " << getSpecialization()
-        << " | Phone: " << getPhone() << '\n';
+    out << "[" << role() << " #" << getId() << "] "<< getName() << " | " << getSpecialization() << " | Phone: " << getPhone() << '\n';
 }
 
 string Doctor::serialize() const {
     ostringstream out;
-    out << getId() << '|'
-        << getName() << '|'
-        << getPhone() << '|'
-        << specialization;
+    out << getId() << '|' << getName() << '|' << getPhone() << '|' << specialization;
     return out.str();
 }
 
